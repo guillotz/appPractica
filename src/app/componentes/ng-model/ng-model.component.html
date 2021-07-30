@@ -1,0 +1,143 @@
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-12 centrado">
+            <h1>Ng-model Component</h1>
+        </div>
+    </div>
+
+    <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                    aria-expanded="true" aria-controls="collapseOne">
+                    Introducción
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne">
+                <div class="accordion-body">
+                    <div class="row parrafo_dot">
+                        <div class="col-6">
+                            <p>
+                                El uso del [(ngModel)] nos sirve para poder <strong>asignar valores a nuestras
+                                    variables</strong>
+                                tanto desde el HTML hacia al TS como desde el TS hacia el HTML. Es un elemento muy
+                                utilizado
+                                para poder obtener datos, como por ejemplo sobre <strong>inputs, combos, radioButtons,
+                                    checks, etc.</strong>
+                            </p>
+                        </div>
+                        <div class="col-6">
+                            <p>
+                                Utilizando el concepto de 'banana in a box', se utilizan los '[]', dentro de ellos los
+                                '()' y finalmente
+                                dentro de los parentesis se utiliza la palabra ngModel, formando todo junto
+                                <strong>[(ngModel)]</strong>.
+                            </p>
+                        </div>
+                        <div class="col-12">
+                            <p>
+                                Suponiendo que quisieramos guardar el valor que contiene un input en una variable en
+                                nuestro archivo .TS
+                                La siguiente sintaxis sería la correcta
+                            </p>
+                            <p style="text-align: center; font-size: 20px;">
+                                &lt;input type="text" <strong>[(ngModel)]=<span
+                                        style="color:red">"variable"</span></strong>&gt;
+                            </p>
+                        </div>
+                        <div class="col-6 col_centrado">
+                            <p>
+                                Donde <span style="color:red">"variable"</span> representa a una variable declarada en
+                                nuestro archivo .TS
+                                de esta manera, letra a letra lo que ingresemos en nuestro input se ira asignando a
+                                nuestra variable, siguiendo el ejemplo
+                                de los nombres vistos en la interpolación, si el input obtiene el valor 'Guillermo',
+                                esto quiere decir que se reasignara 9 veces
+                                el valor de nuestra variable. ¿Porqué?
+                            </p>
+                        </div>
+                        <div class="col-6">
+                            <p>
+                                Sencillamente por que cada vez que nosotros presionemos una tecla, será un nuevo valor
+                                para nuestra variable
+                            </p>
+                            <p>
+                                La primer asignación será la 'G', sería lo mismo que decir nombre="G";
+                            </p>
+                            <p>
+                                La segunda asignación será la 'u', como el anterior paso sería lo mismo que decir
+                                nombre="Gu";
+                            </p>
+                            <p>
+                                Así seguiría asignando consecutivamente letra a letra hasta lograr el valor final
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Ejemplo
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo">
+                <div class="accordion-body">
+                    <div class="row rowEspaciado">
+                        <div class="col-6 parrafo centrado rowTitulo">
+                            .HTML
+                        </div>
+                        <div class="col-6 parrafo centrado rowTitulo">
+                            .TS
+                        </div>
+                        <div class="col-6 col_centrado">
+                            <p>Desde el <code>HTML</code> dibujamos un input para poder obtener valor desde el teclado y
+                                lo 'bindeamos' o asignamos a una variable en nuestro archivo <code>.TS</code></p>
+                            <img src="assets/ngmodelHTML.PNG">
+                            <span>Nombre:</span>
+                            <input type="text" [(ngModel)]="nombre">
+                            <p>Mostramos el valor de la variable por medio de la interpolación {{ '{{nombre}}'}}</p>
+                            <p>Nombre: {{nombre}}</p>
+                        </div>
+                        <div class="col-6">
+                            <p>
+                                En el archivo .TS declaramos la variable para poder vincularla a nuestro elemento HTML
+                            </p>
+                            <img src="assets/ngmodelTS.PNG">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Ejercitación
+                </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree">
+                <div class="accordion-body">
+                    <div class="row">
+                        <div class="col-6">
+                            Realizar los siguientes tipos de asignaciones a variables y mostrar su contenido por
+                            interpolación.
+                            <ul>
+                                <li>Input tipo texto</li>
+                                <li>Input tipo numero</li>
+                                <li>Select (el tipo que quieran)</li>
+                                <li>CheckBox (booleano)</li>
+                            </ul>
+                        </div>
+                        <div class="col-6 centrado">
+                            Ejercicios
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

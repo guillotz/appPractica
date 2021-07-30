@@ -1,0 +1,142 @@
+<div class="container-fluid">
+    <div class="centrado">
+        <h1>Interpolacion Component</h1>
+    </div>
+    <div class="accordion" id="accordionPanelsStayOpenExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                    aria-controls="panelsStayOpen-collapseOne">
+                    Definición
+                </button>
+            </h2>
+            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+                aria-labelledby="panelsStayOpen-headingOne">
+                <div class="accordion-body">
+                    <div class="row">
+                        <div class="col-6 parrafo_dot" style="border-right: none;">
+                            <p>
+                                La interpolación es la manera que tenemos de vincular variables de nuestro
+                                archivo .ts hacia nuestro archivo .html, esto quiere decir que es la manera
+                                de poder mostrar los valores de nuestras variables en nuestro archivo <code>HTML</code>
+                            </p>
+                        </div>
+                        <div class="col-6 parrafo_dot" style="border-left: none;">
+                            <p>
+                                La manera de acceder a los valores de las variables declaradas en el archivo .ts
+                                es mediante el uso de llaves "{{ '{{variable}}' }}". De esta manera
+                                podremos mostrar en el HTML el valor que contiene dicha variable
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                    aria-controls="panelsStayOpen-collapseTwo">
+                    Ejemplo
+                </button>
+            </h2>
+            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+                aria-labelledby="panelsStayOpen-headingTwo">
+                <div class="accordion-body">
+                    <div class="row rowEspaciado">
+                        <div class="col-6 centrado parrafo rowTitulo">
+                            TS
+                        </div>
+                        <div class="col-6 centrado parrafo rowTitulo">
+                            HTML
+                        </div>
+                        <div class="col-6 col_centrado parrafo">
+                            <p>Por ejemplo, en el archivo .ts declaramos la variable "nombre", le damos un valor inicial
+                                "Guillermo" </p>
+                            <img src="../../../assets/interpolacionTS.PNG">
+                            <p>Para poder mostrar el valor de esa variable utilizaremos la interpolación
+                                {{'{{nombre}}'}}</p>
+                        </div>
+                        <div class="col-6 col_centrado parrafo">
+                            <img src="../../../assets/interpolacionHTML.PNG">
+                            <h3>Interpolación: {{nombre}}</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                    aria-controls="panelsStayOpen-collapseThree">
+                    Ejercitación
+                </button>
+            </h2>
+            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
+                aria-labelledby="panelsStayOpen-headingThree">
+                <div class="accordion-body">
+                    <div class="row">
+                        <div class="col-6">
+                            Declarar las siguientes variables, darle un valor inicial y mostrarlo por HTML
+                            <ul>
+                                <li>nombre : string</li>
+                                <li>edad: number</li>
+                                <li>flag: boolean</li>
+                                <li>auto: any (propiedades: color, marca, precio)</li>
+                            </ul>
+                            <p>
+                                <strong>
+                                    Reemplazar los valores de la derecha por valores de variables
+                                </strong>
+                            </p>
+                        </div>
+                        <div class="col-6">
+                            <div class="row">
+                                <div class="col-6">
+                                    Nombre:
+                                </div>
+                                <div class="col-6">
+                                    Gui
+                                </div>
+                                <div class="col-6">
+                                    Edad:
+                                </div>
+                                <div class="col-6">
+                                    35
+                                </div>
+                                <div class="col-6">
+                                    Flag:
+                                </div>
+                                <div class="col-6">
+                                    true
+                                </div>
+                                <div class="col-6">
+                                    <div>Auto</div>
+                                    <div>Color: </div>
+                                    <div>Marca: </div>
+                                    <div>Precio: </div>
+                                </div>
+                                <div class="col-6">
+                                    <div>Propiedades</div>
+                                    <div>
+                                        rojo
+                                    </div>
+                                    <div>
+                                        ford
+                                    </div>
+                                    <div>
+                                        2000
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

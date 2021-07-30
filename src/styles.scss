@@ -1,1 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
+.parrafo{
+    border: solid 1px;
+}
+.parrafo_dot{
+    border: dotted 1px red;
+}
+.texto_parrafo{
+    margin: 10px;
+
+}
+.centrado{
+    text-align: center;
+}
+.col_centrado{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.rowTitulo{
+    background-color: black;
+    font-weight: bolder;
+    color: white;
+}
+.rowEspaciado{
+    margin-top: 15px;
+}
+
+.azul{
+    color: blue;
+}
+.violeta{
+    color:darkviolet;
+}
+.crim{
+    color:crimson;
+}
+.verde{
+    color:darkgreen
+}
+.gris{
+    color:darkgray;
+}
+*h1 {
+	color: #004c6c;
+}
