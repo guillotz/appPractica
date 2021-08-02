@@ -9,6 +9,8 @@ import { NgModelComponent } from './componentes/ng-model/ng-model.component';
 import { FuncionesComponent } from './componentes/funciones/funciones.component';
 import { FormsModule } from '@angular/forms';
 import { PrimerIntegradorComponent } from './componentes/primer-integrador/primer-integrador.component';
+import { NgIfComponent } from './componentes/ng-if/ng-if.component';
+import { NgForComponent } from './componentes/ng-for/ng-for.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { PrimerIntegradorComponent } from './componentes/primer-integrador/prime
     NgModelComponent,
     FuncionesComponent,
     PrimerIntegradorComponent,
+    NgIfComponent,
+    NgForComponent,
   ],
   imports: [
     BrowserModule,

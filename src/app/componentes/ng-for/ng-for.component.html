@@ -1,0 +1,135 @@
+<div class="container-fluid">
+    <div class="centrado">
+        <h1>Ng For Component</h1>
+    </div>
+
+    <div class="accordion" id="accordionPanelsStayOpenExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                    aria-controls="panelsStayOpen-collapseOne">
+                    Definición
+                </button>
+            </h2>
+            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+                aria-labelledby="panelsStayOpen-headingOne">
+                <div class="accordion-body">
+                    <div class="alert alert-dark" role="alert">
+                        <p>
+                            La directiva <strong>*ngFor</strong> nos permite recorrer
+                            arrays,vectores,arreglos,matrices,etc.
+                            Al igual que el ngIf es aplicable a casi todos los elementos <code>HTML</code>, el elemento
+                            en donde se
+                            coloque, será el elemento que se dibujará N veces.
+                            La sintaxis para el *ngFor es la siguiente
+                        </p>
+                        <p>
+                            &lt;input type="text" <strong>*ngFor=</strong>"<span class="azul">let </span> <span
+                                class="crim">variable
+                            </span> <span class="verde">of </span> <span class="violeta">array</span>" en donde:
+                        </p>
+                        <ul>
+                            <li>
+                                <strong>*ngFor</strong>: Nombre de la directiva
+                            </li>
+                            <li>
+                                <span class="azul">let</span>: Tipo de variable que será utilizada para guardar en
+                                memoria cada uno de
+                                los elementos del array que se van recorriendo
+                            </li>
+                            <li>
+                                <span class="crim">variable</span>: Nombre de la variable para poder reutilizar en el
+                                html , en esta
+                                variable se alojará la información de cada una de las posiciones de nuestro array
+                            </li>
+                            <li>
+                                <span class="verde">of</span>: Palabra reservada de angular para utilizar el ngFor
+                            </li>
+                            <li>
+                                <span class="violeta">array:</span> El array (variable declarada en el <code>.TS</code>)
+                                es desde donde
+                                vamos a ir recorriendo
+                            </li>
+                            <li>
+                                Un ejemplo práctico para poder definir de mejor manera toda la 'frase' por así decirlo,
+                                sería tomar un
+                                ejemplo de un array de vehiculos. Si quisieramos recorrer el array a nivel
+                                <code>HTML</code> utilizando
+                                el ngFor, deberíamos escribir
+                                *ngFor = "let <span class="crim">auto</span> of <span class="violeta">autos</span> ",
+                                en donde <span class="crim">auto</span> sería el nombre que vamos a utilizar para poder
+                                acceder a los
+                                valores de cada uno de los autos que se encuentren en nuestro array, y <span
+                                    class="violeta">autos</span> sería el array declarado en nuestro <code>.TS</code>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                    aria-controls="panelsStayOpen-collapseTwo">
+                    Ejemplo
+                </button>
+            </h2>
+            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+                aria-labelledby="panelsStayOpen-headingTwo">
+                <div class="accordion-body">
+                    <div class="row">
+                        <div class="col-6 rowTitulo centrado parrafo">
+                            .HTML
+                        </div>
+                        <div class="col-6 rowTitulo centrado parrafo">
+                            .TS
+                        </div>
+                        <div class="col-6 col_centrado parrafo_dot">
+                            <p>
+                                En el caso de ejemplo, a nivel <code>HTML</code> con el uso de un <strong>ngFor</strong>
+                                se recorre un array y se muestra el valor de cada uno de sus elementos
+                            </p>
+                            <p>
+                                Analizando un poco lo escrito en el <code>HTML</code> podemos identificar la estructura
+                                del ngFor, 'let frase of frases' en donde frase va a ser el nombre
+                                de la variable que se asignará a nivel <code>HTML</code> y frases es el array declarado
+                                en nuestro <code>.TS</code>, luego utilizamos la <code>interpolación</code> para poder
+                                mostrar el valor de cada frase
+                            </p>
+                            <img src="assets/ngForHTML.PNG" alt="">
+                            <br><strong>Resultado:</strong><br>
+                            <div class="centrado" *ngFor="let frase of frases">
+                                {{frase}}
+                            </div>
+                        </div>
+                        <div class="col-6 col_centrado">
+                            <p>
+                                Desde nuestro <code>.TS</code> vamos a tener que lógicamente declarar nuestro array (en
+                                este caso de strings) que va a ser el que recorreremos desde el <code>HTML</code> utilizando el ngFor
+                            </p>
+                            <img src="assets/ngForTS.PNG" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                    aria-controls="panelsStayOpen-collapseThree">
+                    Ejercitación
+                </button>
+            </h2>
+            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
+                aria-labelledby="panelsStayOpen-headingThree">
+                <div class="accordion-body">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
