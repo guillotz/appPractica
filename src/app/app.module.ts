@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { PrimerIntegradorComponent } from './componentes/primer-integrador/primer-integrador.component';
 import { NgIfComponent } from './componentes/ng-if/ng-if.component';
 import { NgForComponent } from './componentes/ng-for/ng-for.component';
+import { SegundoIntegradorComponent } from './componentes/segundo-integrador/segundo-integrador.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { NgForComponent } from './componentes/ng-for/ng-for.component';
     PrimerIntegradorComponent,
     NgIfComponent,
     NgForComponent,
+    SegundoIntegradorComponent,
   ],
   imports: [
     BrowserModule,

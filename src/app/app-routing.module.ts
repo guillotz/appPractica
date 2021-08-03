@@ -6,6 +6,7 @@ import { NgForComponent } from './componentes/ng-for/ng-for.component';
 import { NgIfComponent } from './componentes/ng-if/ng-if.component';
 import { NgModelComponent } from './componentes/ng-model/ng-model.component';
 import { PrimerIntegradorComponent } from './componentes/primer-integrador/primer-integrador.component';
+import { SegundoIntegradorComponent } from './componentes/segundo-integrador/segundo-integrador.component';
 
 const routes: Routes = [
   {
@@ -35,6 +36,10 @@ const routes: Routes = [
   {
     path: 'ngFor',
     component: NgForComponent
+  },
+  {
+    path: 'segundo_integrador',
+    component: SegundoIntegradorComponent
   }
 ];
 
