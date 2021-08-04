@@ -1,0 +1,190 @@
+<div class="container-fluid">
+    <div class="centrado">
+        <h1>Input</h1>
+    </div>
+    <div class="alert alert-dark" role="alert">
+        <p>
+            El decorador <code>@Input</code> como vimos en la definición nos servirá para poder enviar información de
+            manera descendente de un componente padre a un componente hijo
+        </p>
+    </div>
+    <div class="row">
+        <div class="accordion" id="accordionPanelsStayOpenExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                        aria-controls="panelsStayOpen-collapseOne">
+                        Definición
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+                    aria-labelledby="panelsStayOpen-headingOne">
+                    <div class="accordion-body">
+                        <div class="row">
+                            <div class="col-8 col_centrado">
+                                <img src="assets/input2.PNG" alt="">
+                            </div>
+                            <div class="col-4 col_evenly">
+                                <div class="centrado parrafo_dot">
+                                    <h5>Componente padre</h5>
+                                    <div>
+                                        <ul>
+                                            <li>
+                                                El componente padre deberá llamar al componente hijo en su código <code>.HTML</code>,
+                                                esto lo hará utilizando el nombre del <code>selector</code> del componente que desea
+                                                emplear como hijo.
+                                            </li>
+                                            <li>
+                                                Una vez puesto en el su <code>.HTML</code> , el padre podrá enviar información al hijo utilizando 
+                                                <span class="verde">[nombre_de_input_hijo]</span> = <span class="azul">valor</span>
+                                            </li>
+                                            <li>
+                                                Ese valor podrá ser un valor fijo (como en el ejemplo: 33), podrá ser una variable del padre, el resultado de una función del padre, etc.
+                                                siempre y cuando sea un valor que coincida con el tipo de dato declarado como <code>@Input()</code> en el componente hijo
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="centrado parrafo_dot">
+                                    <h5>Componente Hijo</h5>
+                                    <div>
+                                        <ul>
+                                            <li>
+                                                El primer paso del componente hijo será importar 'Input' de @angular/core
+                                            </li>
+                                            <li>
+                                                Una vez importado, declarar una variable propia utilizando el decorador <code>@Input()</code>
+                                            </li>
+                                            <li>
+                                                Cuando el componente padre llame al hijo y le pase el valor de la variable, esta podrá
+                                                se utilizada para cualquier fin, mostrarla por interpolación, usarla para procesar alguna lógica, etc.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                        aria-controls="panelsStayOpen-collapseTwo">
+                        Ejemplo
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+                    aria-labelledby="panelsStayOpen-headingTwo">
+                    <div class="accordion-body">
+                        <div class="row">
+                            <div class="col-6 rowTitulo centrado parrafo">
+                                .HTML PADRE
+                            </div>
+                            <div class="col-6 rowTitulo centrado parrafo">
+                                .TS PADRE
+                            </div>
+                            <div class="col-6 col_centrado">
+                                <p>
+                                    Desde el <code>.HTML</code> del componente padre, se llamará al componente hijo con el nombre de su <code>selector</code>
+                                    luego se pasarán los valores que correspondan, en este caso estará ligado a una variable numérica llamada 'numero' con un valor inicial de 100
+                                </p>
+                                <img src="assets/inputPadreHTML.PNG" alt="">
+                                <p>Como resultado podremos visualizar el <code>.HTML</code> del componente hijo</p>
+                                <strong>Resultado:</strong>
+                                <app-hijo1 [propiedad]="numero"></app-hijo1>
+                                
+                            </div>
+                            <div class="col-6 col_centrado">
+                                <p>
+                                    Por el lado del <code>.TS</code> del padre, solamente definiremos la variable 'numero' para poder darle un valor y enviarla hacia el componente hijo
+                                </p>
+                                <img src="assets/inputPadreTs.PNG" alt="">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6 rowTitulo centrado parrafo">
+                                .HTML HIJO
+                            </div>
+                            <div class="col-6 rowTitulo centrado parrafo">
+                                .TS HIJO
+                            </div>
+                            <div class="col-6 col_centrado">
+                                <p>
+                                    Por parte del <code>.HTML</code> del componente hijo, solamente se muestra por interpolación el valor que recibe del componente padre
+                                </p>
+                                <img src="assets/inputHijoHTML.PNG" alt="">
+                                <app-hijo1 [propiedad]="33"></app-hijo1>
+                            </div>
+                            <div class="col-6 col_centrado">
+                                <p>
+                                    En cuanto al archivo <code>.TS</code> del hijo, suceden varias cosas, se <strong>importa </strong> <code>Input</code> de @angular/core,
+                                    se define el nombre de la variable con el decorador <code>@Input()</code>, en este caso el nombre de la variable es <strong>propiedad</strong>
+                                    y luego es la que se utiliza en el <code>.HTML</code> para mostrar el valor por interpolación.
+                                </p>
+                                <img src="assets/inputHijoTS.PNG" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                        aria-controls="panelsStayOpen-collapseThree">
+                        Ejercitación
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
+                    aria-labelledby="panelsStayOpen-headingThree">
+                    <div class="accordion-body">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="centrado">
+                                    Ejercicios
+                                </div>
+                                <ol>
+                                    <li>
+                                        Llamar al componente hijo2 y pasarle 2 valores, 'nombre' y 'edad', que deben mostrarse por interpolación en el hijo2
+                                    </li>
+                                    <li>
+                                        Volver a llamar al componente hijo2, pero ahora solamente con 1 solo valor: edad
+                                    </li>
+                                    <li>
+                                        Llamar al componente hijo3 enviandole un objeto any con las propiedades 'marca', 'modelo', 'color' y mostrarlo por interpolación en el componente
+                                    </li>
+                                    <li>
+                                        Enviar el mismo objeto, pero ahora agregando a hijo2 como hijo del componente input, el flujo de la información debería salir del input.component , viajar a través de hijo2.component
+                                        y finalizar en el hijo3.component
+                                    </li>
+                                </ol>
+                            </div>
+                            <div class="col-6">
+                                <div class="centrado">
+                                    Resolución
+                                </div>
+                                <ol>
+                                    <li>
+                                        Llamar al componente hijo 2
+                                    </li>
+                                    <li>
+                                        Llamar al componente hijo 2
+                                    </li>
+                                    <li>
+                                        Llamar al componente hijo 3
+                                    </li>
+                                    <li>
+                                        Llamar al componente hijo 2 y mostrar la info de hijo 3
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

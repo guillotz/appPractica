@@ -7,6 +7,16 @@
         border: solid 1px white;
     }
 }
+.subBoton{
+    color:red;
+    background-color: #014d6d;
+    width: 100%;
+    text-align: left;
+    border:none;
+    &:hover{
+        border: solid 1px black;
+    }
+}
 .divBoton{
     border-bottom: solid 1px #004c6c;
 }

@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class MenuComponent implements OnInit {
 
+  comu: boolean = false;
   constructor(
     private router: Router
   ) { }
@@ -15,8 +16,15 @@ export class MenuComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  goTo(where: string){
+  goTo(where: string) {
     this.router.navigate([where]);
+  }
+  show(what: string) {
+    switch (what) {
+      case 'comunicacion':
+        this.comu = !this.comu;
+        break;
+    }
   }
 
 }

@@ -22,3 +22,19 @@
 <div class="divBoton">
     <button class="boton" (click)="goTo('segundo_integrador')">Segundo Integrador</button>
 </div>
+<div class="divBoton">
+    <button class="boton" (click)="show('comunicacion')">Comunicación entre componentes</button>
+    <div *ngIf="comu">
+        <div class="divBoton">
+            <button class="subBoton" (click)="goTo('definicionIo')">Definición</button>
+            <button class="subBoton" (click)="goTo('input')">Input</button>
+            <button class="subBoton" (click)="goTo('output')">Output</button>
+        </div>
+    </div>
+</div>
+<div class="divBoton">
+    <button class="boton" (click)="goTo('routeo')">Routeo</button>
+</div>
+<div class="divBoton">
+    <button class="boton" (click)="goTo('servicios')">Servicios</button>
+</div>

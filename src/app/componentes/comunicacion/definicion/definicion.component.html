@@ -1,0 +1,47 @@
+<div class="container-fluid">
+    <div class="centrado">
+        <h1>Definición</h1>
+    </div>
+    <div class="row">
+        <div class="col-12 parrafo_dot">
+            <p>
+                La comunicación entre componentes nos sirve para intercambiar datos entre componentes, siempre existirá un componente padre
+                que utilice a uno o más componentes hijos. Para poder realizar esta comunicación se utilizarán los decoradores <code>@Input</code> y <code>@Output</code>
+            </p>
+            <p>
+                Los decoradores <code>@Input</code> y <code>@Output</code> sirven para intercambiar datos entre componentes, son un mecanismo para
+                enviar y recibir datos de un componente a otro.
+                <code>@Input</code> se usa para recibir datos en un componente mientras que <code>@Output</code> se usa para enviar datos fuera de
+                un componente. <code>@Output</code> envía datos exponiendo a los productores de eventos, generalmente objetos
+                EventEmitter.
+            </p>
+            <p>
+                La finalidad del uso de estos decoradores es reutilizar los componentes, un ejemplo claro sería un componente de tipo tabla,
+                en donde reciba la información que deba mostrar y se genere de manera dinámica permitiendo utilizar la misma tabla
+                en toda la aplicación, solamente enviando desde el padre la información al hijo ( <code>@Input</code> ) y recibiendo sus eventos
+                ( <code>@Output</code> )
+            </p>
+            <p>
+                Una de las premisas del uso de este tipo de decoradores ( <code>@Input/@Output</code> ) es que <strong>siempre</strong>
+                la comunicación será de la siguiente manera:
+            </p>
+            <div class="centrado">
+                <img src="assets/io.PNG" alt="">
+            </div>
+            <p>
+                El padre <strong>siempre</strong> se comunicará por <code>@Input</code> con sus hijos y los hijos se comunicarán <strong>siempre</strong> mediante <code>@Output</code> con su padre
+                es una comunicación <strong>descendente</strong> de padre a hijo y <strong>ascendente</strong> de hijo a padre.
+            </p>
+            <p>
+                Dada la finalidad de la comunicación entre componentes, podemos encontrarnos con varios escenarios, por ejemplo un padre que tenga muchos hijos, un padre que tenga hijos que a su vez estos hijos tengan otros componentes
+                hijos (nietos), etc. <strong>Siempre</strong> la comunicación será de manera directa entre padre e hijo, no podemos saltear 'generaciones' utilizando estos decoradores.
+            </p>
+            <div class="alert alert-dark" role="alert">
+                <p>
+                    <strong>No existe la comunicación directa entre componentes hermanos</strong>    , esto quiere decir que si un padre tiene varios hijos, el <strong>componente padre</strong> deberá ser
+                    el encargado de manejar la información entre sus hijos.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

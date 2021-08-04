@@ -17,6 +17,11 @@
     flex-direction: column;
     justify-content: center;
 }
+.col_evenly{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
 .rowTitulo{
     background-color: black;
     font-weight: bolder;
@@ -45,4 +50,19 @@
 	color: #004c6c;
     margin-top: 20px;
     margin-bottom: 10px;
+}
+.fondoUnder{
+    background-image: url("assets/underConstruction.png");
+    background-repeat: no-repeat;
+}
+.contenedorFoto{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 90vh;
+    padding-left: 30%;
+}
+.imgUnder{
+
 }

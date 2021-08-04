@@ -12,6 +12,14 @@ import { PrimerIntegradorComponent } from './componentes/primer-integrador/prime
 import { NgIfComponent } from './componentes/ng-if/ng-if.component';
 import { NgForComponent } from './componentes/ng-for/ng-for.component';
 import { SegundoIntegradorComponent } from './componentes/segundo-integrador/segundo-integrador.component';
+import { RouteoComponent } from './componentes/routeo/routeo.component';
+import { ServiciosComponent } from './componentes/servicios/servicios.component';
+import { InputComponent } from './componentes/comunicacion/input/input.component';
+import { OutputComponent } from './componentes/comunicacion/output/output.component';
+import { DefinicionComponent } from './componentes/comunicacion/definicion/definicion.component';
+import { Hijo1Component } from './componentes/comunicacion/hijos/hijo1/hijo1.component';
+import { Hijo2Component } from './componentes/comunicacion/hijos/hijo2/hijo2.component';
+import { Hijo3Component } from './componentes/comunicacion/hijos/hijo3/hijo3.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +32,14 @@ import { SegundoIntegradorComponent } from './componentes/segundo-integrador/seg
     NgIfComponent,
     NgForComponent,
     SegundoIntegradorComponent,
+    RouteoComponent,
+    ServiciosComponent,
+    InputComponent,
+    OutputComponent,
+    DefinicionComponent,
+    Hijo1Component,
+    Hijo2Component,
+    Hijo3Component,
   ],
   imports: [
     BrowserModule,
