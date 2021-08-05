@@ -17,9 +17,12 @@ import { ServiciosComponent } from './componentes/servicios/servicios.component'
 import { InputComponent } from './componentes/comunicacion/input/input.component';
 import { OutputComponent } from './componentes/comunicacion/output/output.component';
 import { DefinicionComponent } from './componentes/comunicacion/definicion/definicion.component';
-import { Hijo1Component } from './componentes/comunicacion/hijos/hijo1/hijo1.component';
-import { Hijo2Component } from './componentes/comunicacion/hijos/hijo2/hijo2.component';
-import { Hijo3Component } from './componentes/comunicacion/hijos/hijo3/hijo3.component';
+import { Hijo1Component } from './componentes/comunicacion/hijos/input/hijo1/hijo1.component';
+import { Hijo2Component } from './componentes/comunicacion/hijos/input/hijo2/hijo2.component';
+import { Hijo3Component } from './componentes/comunicacion/hijos/input/hijo3/hijo3.component';
+import { Out1Component } from './componentes/comunicacion/hijos/output/out1/out1.component';
+import { Out2Component } from './componentes/comunicacion/hijos/output/out2/out2.component';
+import { Out3Component } from './componentes/comunicacion/hijos/output/out3/out3.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +43,9 @@ import { Hijo3Component } from './componentes/comunicacion/hijos/hijo3/hijo3.com
     Hijo1Component,
     Hijo2Component,
     Hijo3Component,
+    Out1Component,
+    Out2Component,
+    Out3Component,
   ],
   imports: [
     BrowserModule,

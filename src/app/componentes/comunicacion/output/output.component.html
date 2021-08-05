@@ -1,1 +1,288 @@
-<p>output works!</p>
+<div class="container-fluid">
+    <div class="centrado">
+        <h1>Output Component</h1>
+    </div>
+    <div class="alert alert-dark" role="alert">
+        <p>
+            El decorador <code>@Output</code> nos sirve para emitir un valor desde el componente hijo que pueda ser
+            escuchado por el componente padre.
+        </p>
+    </div>
+    <div class="accordion" id="accordionPanelsStayOpenExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                    aria-controls="panelsStayOpen-collapseOne">
+                    Uso
+                </button>
+            </h2>
+            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+                aria-labelledby="panelsStayOpen-headingOne">
+                <div class="accordion-body">
+                    <div class="row">
+                        <div class="col-8 col_centrado">
+                            <img src="assets/output1.PNG" alt="">
+                        </div>
+                        <div class="col-4 col_evenly">
+                            <div class="centrado parrafo_dot">
+                                <h5>Componente padre</h5>
+                                <div>
+                                    <ul>
+                                        <li>
+                                            Desde el <code>.HTML</code> del padre, en el llamado al hijo puede capturar
+                                            uno o más eventos que este emita.
+                                            Para poder hacerlo, deberá ingresar entre <strong>()</strong> el nombre de
+                                            la variable de tipo <span class="verde">@Output</span> declarada en el hijo
+                                        </li>
+                                        <li>
+                                            Una vez capturado el evento, deberá enviarlo a una función de su propio
+                                            <code>.TS</code> y enviar por parámetros lo capturado
+                                        </li>
+                                        <li>
+                                            Desde el <code>.TS</code> solo resta generar la lógica de lo que se desa
+                                            hacer con la información enviada desde el componente hijo
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="centrado parrafo_dot">
+                                <h5>Componente Hijo</h5>
+                                <div>
+                                    <ul>
+                                        <li>
+                                            El primer paso del componente hijo será importar <strong>'Output'</strong> y
+                                            <strong>'EventEmitter'</strong> de @angular/core
+                                        </li>
+                                        <li>
+                                            Una vez importado, generar una nueva instancia del objeto tipo EventEmitter
+                                            utilizando el decorador <code>@Output()</code>
+                                        </li>
+                                        <li>
+                                            Generar una función que utlice el objeto <strong>evento</strong> (en el caso
+                                            del ejemplo) y llamar a la función <code>emit()</code> de ese objeto
+                                            pasandole como parámetro lo que querramos enviar hacia el padre.
+                                        </li>
+                                        <li>
+                                            Siguiendo el ejemplo, solo resta generar el código <code>HTML</code> para
+                                            llamar a la función que utiliza el <code>.emit()</code>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                    aria-controls="panelsStayOpen-collapseTwo">
+                    Ejemplo
+                </button>
+            </h2>
+            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+                aria-labelledby="panelsStayOpen-headingTwo">
+                <div class="accordion-body">
+                    <div class="row">
+                        <div class="col-6 rowTitulo centrado parrafo">
+                            .HTML PADRE
+                        </div>
+                        <div class="col-6 rowTitulo centrado parrafo">
+                            .TS PADRE
+                        </div>
+                        <div class="col-6 col_evenly">
+                            <p>
+                                En el <code>.HTML</code> del padre, dentro del llamado al componente hijo, se usaran los
+                                <strong>()</strong>
+                                para poder capturar la información que envíe el hijo.
+                            </p>
+                            <div class="alert alert-primary" role="alert">
+                                Recordar que lo que irá entre los <strong>()</strong> es el nombre de la variable
+                                <code>@Output</code> declarada en el hijo. En este caso sería:
+                                <strong>(evento)</strong>
+                            </div>
+                            <img src="assets/outputHtmlPadre.PNG" alt="" style="margin-bottom: 20px;">
+                            <p>
+                                Eso se asignará a una función en el <code>.TS</code> del padre, y se enviará por
+                                parámetro la información enviada del hijo.
+                            </p>
+                            <div class="alert alert-primary" role="alert">
+                                En este caso, la función del archivo <code>.TS</code> del padre tiene el nombre
+                                <strong>capturoMensaje</strong>
+                                y el parámetro es <strong>$event</strong>
+                            </div>
+                        </div>
+                        <div class="col-6 col_evenly">
+                            <p>
+                                En el caso del archivo <code>.TS</code> del padre, solamente generaremos la lógica de la
+                                función <strong>capturoMensaje</strong>
+                            </p>
+                            <img src="assets/outputTsPadre.PNG" alt="">
+                            <div class="alert alert-primary" role="alert">
+                                La función solamente mostrará mediante un <code>alert()</code> el mensaje que se recibe
+                                desde el componente hijo
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 rowTitulo centrado parrafo">
+                            .HTML HIJO
+                        </div>
+                        <div class="col-6 rowTitulo centrado parrafo">
+                            .TS HIJO
+                        </div>
+                        <div class="col-6 col_evenly">
+                            <p>
+                                En el <code>.HTML</code> del hijo ( <strong>para este caso</strong> ) solamente se
+                                generará un botón que llame a la función que emitirá el mensaje con el parámetro
+                                requerido.
+                            </p>
+                            <img src="assets/outputHtmlHijo.PNG" alt="">
+                            <div class="alert alert-primary" role="alert">
+                                La función definida en el <code>.TS</code> del hijo se llama
+                                <strong>emitirEvento</strong> y
+                                recibe un parámetro de tipo <code>string</code>
+                            </div>
+                        </div>
+                        <div class="col-6 col_evenly">
+                            <div class="alert alert-primary" role="alert">
+                                <code>*</code> Recordar importar <strong>'Output'</strong> y
+                                <strong>'EventEmitter'</strong> de
+                                <code>@angular/core</code>
+                            </div>
+                            <p>
+                                En el <code>.TS</code> del componente hijo, se deberá declarar la variable con el
+                                decorador <code>@Output()</code> de tipo <code>EventEmitter</code> e instanciar
+                                el objeto. En el ejemplo el nombre de nuestra variable instanciada y con el decorador es
+                                <strong>evento</strong>
+                            </p>
+                            <img src="assets/outputTsHijo.PNG" alt="">
+                            <p>
+                                Luego se deberá generar la función que utilice este objeto para poder emitir información
+                                hacia el padre. En el ejemplo la función se llama <strong>emitirEvento()</strong>
+                                que recibe un parámetro.
+                            </p>
+                            <div class="alert alert-primary" role="alert">
+                                La función recibe el parámetro <code>mensaje</code> y lo utiliza como parámetro de la
+                                función
+                                <strong>emit</strong> de nuestro objeto <strong>evento</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 rowTitulo centrado parrafo">
+                            EJEMPLO PRACTICO
+                        </div>
+                        <div class="col-12">
+                            <div class="centrado">
+                                <strong>Llamado al componente hijo</strong>
+                                <app-out1 (evento)="capturoMensaje($event)"></app-out1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                    aria-controls="panelsStayOpen-collapseThree">
+                    Ejercitación
+                </button>
+            </h2>
+            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
+                aria-labelledby="panelsStayOpen-headingThree">
+                <div class="accordion-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="centrado">
+                                <h3>Ejercicios</h3>
+                            </div>
+                            <ol>
+                                <li>
+                                    Recibir un valor numérico del componente <strong>out2</strong> mediante un botón y
+                                    mostrarlo por interpolación en este componente
+                                </li>
+                                <li>
+                                    Recibir un objeto* del componente <strong>out3</strong> y mostrarlo por consola en
+                                    el componente <strong>out2</strong>
+                                    <p>
+                                        * objeto JugadorFutbol, propiedades: Apellido, Posición, nº de Camiseta
+                                    </p>
+                                </li>
+                                <li>
+                                    Utilizar el objeto del Punto 2 para mostrarlo por interpolación en éste componente.
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="col-6">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="centrado">
+                                        <h3>Resolución</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 parrafo_dot">
+                                    <div class="centrado">
+                                        Punto1
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    Valor recibido del componente <strong>out2</strong>:
+                                </div>
+                                <div class="col-6">
+                                    <app-out2></app-out2>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 parrafo_dot">
+                                    <div class="centrado">
+                                        Punto 2
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    Llamar al componente <strong>out2</strong> y que este llame al componente <strong>out3</strong>
+                                </div>
+                                <div class="col-6">
+                                    <app-out2></app-out2>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 parrafo_dot">
+                                    <div class="centrado">
+                                        Punto 3
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div>
+                                    Apellido:
+                                </div>
+                                <div>
+                                    Posición:
+                                </div>
+                                <div>
+                                    Dorsal:
+                                </div>
+                            </div>
+                            <div class="col-6">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

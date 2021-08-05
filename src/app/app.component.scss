@@ -1,5 +1,6 @@
-
-* { box-sizing: border-box; }
+* {
+	box-sizing: border-box;
+}
 
 .page {
 	display: grid;
@@ -9,16 +10,18 @@
 }
 
 .main {
-	grid-area: main;	
+	grid-area: main;
 	padding: 0px;
 }
 
 .sidebar {
 	grid-area: sidebar;
-  position: fixed;
+	position: fixed;
 	overflow-y: auto;
 	background-color: white;
 	width: 15vw;
-	height: 100vh;	
+	height: 100vh;
 	padding-top: 20px;
+	z-index: 990;
+	border-left: solid 3px red;
 }

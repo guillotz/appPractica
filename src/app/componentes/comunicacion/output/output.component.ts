@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./output.component.scss']
 })
 export class OutputComponent implements OnInit {
-
   constructor() { }
-
+  
   ngOnInit(): void {
   }
 
+  capturoMensaje(mensajeHijo){
+    alert("El mensaje es: "+ mensajeHijo);
+  }
 }
