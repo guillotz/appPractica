@@ -16,7 +16,7 @@ import { ServiciosComponent } from './componentes/servicios/servicios.component'
 const routes: Routes = [
   {
     path: '',
-    component: InterpolacionComponent
+    component: InterpolacionComponent,
   },
   {
     path: 'interpolacion',

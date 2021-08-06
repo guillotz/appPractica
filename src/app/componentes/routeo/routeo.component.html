@@ -2,7 +2,272 @@
     <div class="centrado">
         <h1>Routeo Component</h1>
     </div>
-    <div class="contenedorFoto">
-        <img src="assets/underConstruction.png" alt="">
+    <div class="alert alert-dark" role="alert">
+        <p>
+            Como ya sabemos, <code>Angular</code> es un framework que nos permite desarrollar páginas <strong> <i>SPA
+                    (Single Page Application)</i> </strong>
+            pero para poder lograr esto, debemos generar 'rutas' que nos lleven a esos componentes que terminarán siendo
+            la vista de nuestra página.
+        </p>
+        <p>
+            Para poder utilizar esas rutas, debemos configurar nuestros módulos de routeo para que <code>Angular</code>
+            entienda a que componente debe llamar.
+            El módulo de configuración de rutas inicial se llama "app-routing.module.ts".
+        </p>
+    </div>
+    <div class="accordion" id="accordionPanelsStayOpenExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                    aria-controls="panelsStayOpen-collapseOne">
+                    Definición y configuración de rutas
+                </button>
+            </h2>
+            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+                aria-labelledby="panelsStayOpen-headingOne">
+                <div class="accordion-body">
+                    <div class="alert alert-dark" role="alert">
+                        <strong> <i>app-routing.module.ts</i> </strong>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 col_centrado parrafo_dot">
+                            <div class="row">
+                                <div class="col-6 col_evenly">
+                                    <img src="assets/routeoRuta.PNG" alt="">
+                                </div>
+                                <div class="col-6 col_evenly">
+                                    <ul>
+                                        <li>
+                                            Las rutas estan configuradas principalmente con un <code>path</code> y
+                                            con un <code>component</code>
+                                        </li>
+                                        <li>
+                                            <code>path</code>: nombre de la ruta =>
+                                            <i>http://localhost:4200/<code>usuarios</code> </i>
+                                        </li>
+                                        <li>
+                                            <code>component</code>: componente al cual hace referencia =>
+                                            UsuariosComponent
+                                        </li>
+                                    </ul>
+                                    <div class="alert alert-dark" role="alert">
+                                        <strong> <i>Recordar importar los componentes a utilizar en el módulo</i>
+                                        </strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col_centrado">
+                            <div class="row">
+                                <div class="col-6">
+                                    <img src="assets/routeoImport.PNG" alt="">
+                                </div>
+                                <div class="col-6">
+                                    <ul>
+                                        <li>
+                                            Una vez que tengamos las rutas configuradas, con sus <code>path</code> y
+                                            <code>component</code>
+                                            solo restará agregar en el decorador del módulo, la sentencia que carga esas
+                                            rutas en la aplicación
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col_evenly" style="margin-top: 20px;">
+                            <div class="alert alert-dark" role="alert">
+                                <p>
+                                    Existen muchas más configuraciones para nuestras rutas, como por ejemplo la
+                                    propiedad <code>canActivate</code>, <code>canDeactivate</code>,
+                                    <code>children</code>, etc
+                                    que nos permitirán configurar de una manera mucho más personalizada nuestras rutas /
+                                    páginas / componentes
+                                </p>
+                            </div>
+                            <img src="assets/routerOptionRoute.PNG" alt="">
+                            <div class="alert alert-dark" role="alert">
+                                <p>
+                                    Documentación oficial de routeo en angular para obtener más información: <a
+                                        href="https://angular.io/guide/router-tutorial">Angular Router</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-6 col_evenly parrafo_dot">
+                            <p>
+                                A nivel <code>HTML</code> solo resta utilizar el componente &lt;router-outlet&gt; para
+                                poder introducir el componente relacionado en la ruta, en ese espacio
+                            </p>
+                            <img src="assets/routerHtml.PNG" alt="">
+                            <div class="alert alert-dark" role="alert">
+                                A nivel <code>HTML</code> no se verán los componentes que no estén en uso, sino que
+                                dentro de nuestro elemento <i>&lt;router-outlet&gt;</i> se irán
+                                cargando de manera dinamica nuestros componentes <code>(HTML / CSS / TS)</code>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="alert alert-primary" role="alert">
+                                <p>
+                                    No necesariamente tenemos que utilizar solo <strong>1</strong> módulo de routeo,
+                                    angular nos da la posibilidad de generar todos los
+                                    modulos que necesitemos para cubrir nuestra aplicación
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                    aria-controls="panelsStayOpen-collapseTwo">
+                    Ejemplo
+                </button>
+            </h2>
+            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+                aria-labelledby="panelsStayOpen-headingTwo">
+                <div class="accordion-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <p>
+                                Existen muchas maneras de poder utilizar el <i>&lt;router-outlet&gt;</i>, podemos usarlo
+                                desde el <code>HTML</code> o desde lógica desde nuestro <code>TS</code>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 rowTitulo centrado parrafo">
+                            USO DESDE <code>HTML</code>
+                        </div>
+                        <div class="col-6 rowTitulo centrado parrafo">
+                            USO DESDE <code>TS</code>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 col_evenly">
+                            <ul>
+                                <li>
+                                    Usando un elemento <code>&lt;a&gt;</code> y agregandole la propiedad
+                                    <code>[routerLink]</code> podremos pasar el <code>path</code> de la ruta
+                                    que queremos cargar.
+                                    <dd>
+                                        <a [routerLink]="['/interpolacion']">Link a Interpolacion Component</a>
+                                    </dd>
+                                </li>
+                                <img src="assets/routerLinkHtml.PNG" alt="">
+                                <li>
+                                    También puede ser utilizado por un botón, sin la necesidad de crear una función y
+                                    capturar el evento click. esto quiere decir que podemos
+                                    utilizar la propiedad <code>[routerLink]</code> también adentro de un botón.
+                                    <dd>
+                                        <button [routerLink]="['/interpolacion']">Navegar a Interpolación
+                                            Component</button>
+                                    </dd>
+                                </li>
+                                <img src="assets/routerLinkButton.PNG" alt="">
+                                <li>
+                                    <p>Acceso a interpolación desde un botón</p>
+                                    <button (click)="routerBoton()">Navegar desde TS</button>
+                                </li>
+                                <img src="assets/routeoBotonHtml.PNG" alt="">
+                            </ul>
+                        </div>
+
+                        <div class="col-6 col_evenly">
+                            <p>
+                                Desde nuestro archivo <code>.TS</code> podemos generar lógica para poder navegar entre
+                                distintos componentes de la aplicación.
+                            </p>
+                            <ol>
+                                <li>
+                                    Se deberá importar {{ '{ Router }' }} de @angular/Router
+                                </li>
+                                <li>
+                                    Inyectar la dependencia en el constructor del componente
+                                </li>
+                                <li>
+                                    De la misma manera que se utiliza el <code>[routerLink]</code> se utilizará el
+                                    metodo <code>navigate</code> de nuestra dependencia <strong><i>router</i></strong>
+                                </li>
+                            </ol>
+                            <img src="assets/routerTs.PNG" alt="">
+                        </div>
+                        <div class="alert alert-primary" role="alert">
+                            <p>
+                                Pueden pasarse parámetros por ruta, acceder a subrutas o rutas hijas de rutas padres,
+                                por ejemplo: <i>localhost:4200/usuarios/juan</i>
+                                la ruta 'juan' sería una ruta hija de la ruta 'usuarios'. Para mas información revisar
+                                la <a href="https://angular.io/guide/router-tutorial">documentación oficial</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                    aria-controls="panelsStayOpen-collapseThree">
+                    Ejercitación
+                </button>
+            </h2>
+            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
+                aria-labelledby="panelsStayOpen-headingThree">
+                <div class="accordion-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="col-centrado">
+                                Ejercicios
+                            </div>
+                            <ul>
+                                <li>
+                                    Navegar hacia el componente de funciones utilizando un elemento &lt;a&gt;
+                                </li>
+                                <li>
+                                    Navegar hacia el componente integrador utilizando un botón (sin función del ts)
+                                </li>
+                                <li>
+                                    Navegar hacia el componente input utilizando un botón y función en el <code>.TS</code>
+                                </li>
+                                <li>
+                                    Navegar hacía una página desconocida utilizando el método que quieran
+                                </li>
+                                <li>
+                                    Investigar cómo generar una página por defecto, cuando la ruta ingresada es erronea.
+                                    Utilizar el método que quieran para generar el error
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <div class="col-centrado">
+                                Resolución
+                            </div>
+                            <ul>
+                                <li>
+                                    <a href="">Funciones!</a>
+                                </li>
+                                <li>
+                                    <button>Componente integrador!</button>
+                                </li>
+                                <li>
+                                    <button>Componente input!</button>
+                                </li>
+                                <li>
+                                    A elección
+                                </li>
+                                <li>
+                                    Suerte!
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
