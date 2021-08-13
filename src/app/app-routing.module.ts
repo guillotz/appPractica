@@ -9,6 +9,7 @@ import { NgForComponent } from './componentes/ng-for/ng-for.component';
 import { NgIfComponent } from './componentes/ng-if/ng-if.component';
 import { NgModelComponent } from './componentes/ng-model/ng-model.component';
 import { PrimerIntegradorComponent } from './componentes/primer-integrador/primer-integrador.component';
+import { RefuerzoIntegradorComponent } from './componentes/refuerzo-integrador/refuerzo-integrador.component';
 import { RouteoComponent } from './componentes/routeo/routeo.component';
 import { SegundoIntegradorComponent } from './componentes/segundo-integrador/segundo-integrador.component';
 import { ServiciosComponent } from './componentes/servicios/servicios.component';
@@ -65,6 +66,10 @@ const routes: Routes = [
   {
     path: 'definicionIo',
     component: DefinicionComponent
+  },
+  {
+    path: 'refuerzo_integrador',
+    component: RefuerzoIntegradorComponent
   }
 ];
 

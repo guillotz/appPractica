@@ -23,6 +23,7 @@ import { Hijo3Component } from './componentes/comunicacion/hijos/input/hijo3/hij
 import { Out1Component } from './componentes/comunicacion/hijos/output/out1/out1.component';
 import { Out2Component } from './componentes/comunicacion/hijos/output/out2/out2.component';
 import { Out3Component } from './componentes/comunicacion/hijos/output/out3/out3.component';
+import { RefuerzoIntegradorComponent } from './componentes/refuerzo-integrador/refuerzo-integrador.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { Out3Component } from './componentes/comunicacion/hijos/output/out3/out3
     Out1Component,
     Out2Component,
     Out3Component,
+    RefuerzoIntegradorComponent,
   ],
   imports: [
     BrowserModule,

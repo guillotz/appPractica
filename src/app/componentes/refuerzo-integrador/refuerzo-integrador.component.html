@@ -1,0 +1,60 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 centrado">
+            <h1>Refuerzo Integrador</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-1 miLabel">
+            <span>Nombre:</span>
+        </div>
+        <div class="col-2 miInfo">
+            <input type="text">
+        </div>
+        <div class="col-1 miLabel">
+            <span>Apellido:</span>
+        </div>
+        <div class="col-2 miInfo">
+            <input type="text">
+        </div>
+        <div class="col-1 miLabel">
+            <span>Dorsal:</span>
+        </div>
+        <div class="col-1 miInfo">
+            <input type="number">
+        </div>
+        <div class="col-2 miLabel">
+            <span>División</span>
+        </div>
+        <div class="col-2 miInfo">
+            <select>
+                <option value="1">Primera</option>
+                <option value="2">Inferiores</option>
+                <option value="3">Senior</option>
+            </select>
+        </div>
+        <div class="col-12" style="margin-top: 20px;">
+            <button type="button" class="btn btn-primary btn-lg btn-block" style="width: 100%;">Agregar</button>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 20px;">
+        <table>
+            <thead>
+                <tr>
+                    <th *ngFor="let t of titulos"> {{t}} </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let j of listaJugadores">
+                    <td> {{j.nombre}} </td>
+                    <td> {{j.apellido}} </td>
+                    <td> {{j.dorsal}} </td>
+                    <td> {{j.division}} </td>
+                    <td>
+                        <button>X</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
