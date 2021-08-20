@@ -34,10 +34,14 @@
                     <div class="centrado">
                         <h3>¿Cómo crear un servicio?</h3>
                         <div class="bd-callout bd-callout-info">
-                            Para crear los servicios utilizaremos la ayuda del <code>angular cli</code>, utilizando el siguiente comando
-                            <pre class=" language-markup"><code class=" language-markup">ng generate service miServicio</code></pre>
-                            Cabe destacar que de manera automática, <code>angular</code> nos agregará al final del servicio, la palabra <i>service</i>, esto quiere decir
-                            siguiendo el  ejemplo, creará el servicio <i>miServicio<code>Service</code></i>
+                            Para crear los servicios utilizaremos la ayuda del <code>angular cli</code>, utilizando el
+                            siguiente comando
+                            <pre class=" language-markup">
+                                <code class=" language-markup">ng generate service miServicio</code>
+                            </pre>
+                            Cabe destacar que de manera automática, <code>angular</code> nos agregará al final del
+                            servicio, la palabra <i>service</i>, esto quiere decir
+                            siguiendo el ejemplo, creará el servicio <i>miServicio<code>Service</code></i>
                         </div>
                     </div>
                 </div>
@@ -54,7 +58,128 @@
             <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
                 aria-labelledby="panelsStayOpen-headingTwo">
                 <div class="accordion-body">
+                    <div class="row">
+                        <div class="col-12 rowTitulo centrado parrafo">
+                            CLI / .TS
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col_centrado">
+                            <p>
+                                Utilizaremos el <code>CLI</code> de angular
+                                para crear el nuevo servicio, en la terminal
+                                ingresaremos el código
+                                <i>
+                                    <strong>ng generate service services/ejemplo</strong>
+                                </i>
+                                esto nos creará una clase EjemploService dentro de la carpeta <i>services</i>
+                            </p>
 
+                        </div>
+                        <div class="col-6 col_centrado">
+                            <img src="assets/servicio1.PNG" alt="">
+                        </div>
+                        <div class="col-6 col_centrado">
+                            <p>Analizando un poco el archivo <code>.TS</code> que creó el <i>CLI</i> por nosotros, podemos ver varios cambios</p>
+                            <ul>
+                                <li>
+                                    El decorador <strong>@</strong> ya no hace referencia a un componente
+                                </li>
+                                <li>
+                                    Vemos una clase con un constructor
+                                </li>
+                                <li>
+                                    Aparece el <span class="verde">decorador</span> <strong>Injectable</strong>
+                                </li>
+                                <li>
+                                    Este <span class="verde">decorador</span> tendrá una propiedad <i><strong>providedIn</strong></i> mediante la cual
+                                    podremos indicar a que nivel podrá utilizarse el servicio, al indicarle el valor
+                                    <strong><i><code>root</code></i></strong> estamos diciendo que será visible por todos los elementos
+                                    de toda nuestra aplicación. 
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-12">
+                            <div class="bd-callout bd-callout-info">
+                                El decorador <strong><i><code>@Injectable</code></i></strong>
+                                nos permitirá <i>'inyectar'</i> el servicio en distintos componentes
+                                para así poder manejar información y/o lógica específica de cada componente.
+                                Para poder acceder al servicio, debemos inyectarlo en nuestro componente, y la manera de
+                                inyectarlo es mediante el <strong>constructor</strong> del componente que quiera utilizar el servicio
+                            </div>
+                        </div>
+                        <div class="col-7 col_centrado">
+                            <img src="assets/servicio2.PNG" alt="">
+                        </div>
+                        <div class="col-5 col_centrado">
+                            <p>
+                                Dentro de los componentes en los cuales necesitemos utilizar nuestro servicio, deberemos
+                                realizar los siguientes pasos para poder utilizarlo
+                            </p>
+                            <ul>
+                                <li>
+                                    Se agregará como parámetro en el constructor de nuestro componente, utilizando el
+                                    <i><strong class="verde">indicador de visibilidad</strong></i> seguido por el
+                                    <i>nombre</i> y será
+                                    del tipo <code>EjemploService</code>
+                                </li>
+                                <li class="bg_bisque">
+                                    <strong class="verde">private</strong> ejemploService <strong>:</strong>
+                                    <code>EjemploService</code>
+                                </li>
+                                <li>
+                                    Luego de 'inyectarlo' en nuestro constructor, podremos utilizar nuestro servicio
+                                    dentro de nuestro componente
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-12">
+                            <div class="bd-callout bd-callout-info">
+                                <strong>EjemploService</strong>
+                            </div>
+                        </div>
+                        <div class="col-6 col_centrado">
+                            <img src="assets/servicio3.PNG" alt="">
+                        </div>
+                        <div class="col-6 col_centrado">
+                            <ul>
+                                <li>
+                                    Se crea una variable de tipo string con el valor 
+                                    <strong><i>"Soy un servicio"</i></strong>
+                                </li>
+                                <li>
+                                    Se crea una función llamada <strong><i>getFrase</i></strong>
+                                    que devuelve el valor de nuestra variable frase
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-12">
+                            <div class="bd-callout bd-callout-info">
+                                <strong>ServiciosComponent</strong>
+                            </div>
+                        </div>
+                        <div class="col-6 col_centrado">
+                            <img src="assets/servicio4.PNG" alt="">
+                        </div>
+                        <div class="col-6">
+                            <p>
+                                En nuestro servicio utilizaremos el servicio para darle valor a nuestro componente
+                            </p>
+                            <ul>
+                                <li>
+                                    Para no crear una función, utilizaremos la función <i><strong>ngOnInit()</strong></i> 
+                                </li>
+                                <li>
+                                    Dentro de la función se asignará el valor de la variable frase (del servicio) a la variable local de nuestro componente
+                                </li>
+                                <li>
+                                    Esto quiere decir que si se muestra por interpolación el valor de variable 
+                                    (en nuestro componente), tendremos como resultado: {{variable}}
+                                </li>
+                                <img src="assets/servicio5.PNG" alt="">
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -69,7 +194,64 @@
             <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
                 aria-labelledby="panelsStayOpen-headingThree">
                 <div class="accordion-body">
+                    <div class="row">
+                        <div class="col-6 centrado">
+                            Ejercicios
+                        </div>
+                        <div class="col-6">
+                            Resolución
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <ol>
+                                <li>
+                                    Crear una nueva variable en el servicio <i><strong>EjemploService</strong></i> y 
+                                    mostrar su valor por interpolación
+                                </li>
+                                <li>
+                                    Crear un método en el servicio <i><strong>EjemploService</strong></i> que devuelva
+                                    el valor de la variable creada en el punto 1, mostrar también por interpolación
+                                    pero ahora utilizando el método y no directamente la propiedad.
+                                </li>
+                                <li>
+                                    Crear la variable 'mensaje' en el <code>EjemploService</code>
+                                    Crear la función setMensaje, que reciba un string y asigne el valor recibido a la variable mensaje
+                                    Crear la función getMensaje, que devuelva el valor de la variable 'mensaje'
+                                </li>
+                                <li>
+                                    Crear una variable llamada 'informacion' en el <code>servicio.component.ts</code> y vincularla a un input
+                                    Crear una función que tome el valor de esa variable y lo envíe a la función creada en el punto 3
+                                </li>
+                                <li>
+                                    Crear una nueva variable llamada 'mensaje_servicio' en el <code>servicio.component.ts</code> 
+                                    Crear una función que utilice la función <i><strong>getMensaje()</strong></i> del servicio
+                                    asigne el valor recibido en la variable 'mensaje_servicio' y muestre por interpolación el valor
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="col-6">
+                            <ol>
+                                <li>
+                                    Interpolación: 
+                                </li>
+                                <li>
+                                    Interpolación:
+                                </li>
+                                <li>
 
+                                </li>
+                                <li>
+                                    <input type="text">
+                                    <button>Enviar Información</button>
+                                </li>
+                                <li>
+                                    <button>Traer información</button>
+                                    Interpolación: 
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

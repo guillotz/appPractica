@@ -3,7 +3,7 @@ export const jugadores = [
         nombre: "Juan",
         apellido: "Perez",
         dorsal: 5,
-        perfil: 3
+        division: 3
     },
     {
         nombre: "Pedro",
