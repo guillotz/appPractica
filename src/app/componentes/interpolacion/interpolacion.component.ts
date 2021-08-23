@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductoService } from 'src/app/services/producto.service';
 
 @Component({
   selector: 'app-interpolacion',
@@ -8,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 export class InterpolacionComponent implements OnInit {
 
   nombre: string = "Guillermo";
-  constructor() { }
+  servicio: string;
+  constructor(private productoService: ProductoService) { }
 
   ngOnInit(): void {
+
+  }
+
+  mostrarInfoServicio(){
+    this.servicio = this.productoService.devolverFrase();
   }
 
 }
